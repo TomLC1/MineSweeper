@@ -1,0 +1,9 @@
+/*  LTI - ITW - 21/22
+ Grupo 42 TP21 Nº58646 Nº58617 Nº58671 */
+:root {
+    --corPrincipal: rgb(30, 30, 30);
+    --CorSecundaria: #adadad;
+    --CorTerciaria:rgb(18, 18, 18);
+    --CorTabuleiro: #adadad;
+    --corQuarta:blanchedalmond;
+}

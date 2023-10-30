@@ -1,0 +1,124 @@
+<!-- LTI - ITW - 21/22  -->
+<!-- Grupo 42 TP21 Nº58646 Nº58617 Nº58671 -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/home.css">
+    <title>Minesweeper - Tutorial</title>
+    <script>
+        function buscarCookie(nome) {
+            var value = `; ${document.cookie}`;
+            var partes = value.split(`; ${nome}=`);
+            if (partes.length === 2) return partes.pop().split(';').shift();
+        }
+        var tema = buscarCookie("theme") || 'default';
+
+var link = document.createElement('link'); 
+
+link.rel = 'stylesheet'; 
+
+link.type = 'text/css';
+
+link.href = "./css/theme_"+tema+".css"; 
+
+document.getElementsByTagName('HEAD')[0].appendChild(link); 
+    </script>
+</head>
+<body>
+    <div class="flex-wrapper">
+    <div>
+    <div id="menu"><img src="img/icons8-menu-64.png" alt=""></div>
+    <div class="logo">Minesweeper</div>
+    <nav id="navbar" class="d-xs-none">
+        <ul>
+            <li><a class="link" href="index.html">Home</a></li>
+            <li><a class="link" href="tutorial.html">Tutorial</a></li>
+            <script>
+                if (localStorage.getItem("loggedUser") != undefined) {
+                    document.querySelector("#navbar ul").innerHTML+=" <li><a class='link' href='singleplayer.html'>Singleplayer</a></li>";
+                }
+            </script>
+            <li><a class="link" href="multiplayer.html">Multiplayer</a></li>
+            <li><a class="link active" href="settings.html">Settings</a></li>
+            <li><a class="link" href="info.html">Info</a></li>
+        </ul>
+        
+
+    </nav>
+    <div class="main">
+    <h1>Settings</h1>
+        <form action="javascript:guardarSettings()" class="settings" id="settings">
+            <div class="settings-form">
+                <label for="som">sound</label>
+                <input class="check" name="som" id="som" type="checkbox" onchange="mostraVol()">
+            </div>
+            <div id="showvol" hidden>
+            <div class="settings-form">
+                <label for="volume">volume</label>
+                <input type="range" min="1" max="100" value="20" id="volume" name="volume" oninput="mostrarVolume(this.value)"> <span id="vol"></span>
+            </div>
+            </div>
+            <div class="settings-form">
+                <label for="board_size">Board size:</label>
+                <select name="board_size" id="board_size" onchange="custum()">
+                    <option value="9">Small(9x9)</option>
+                    <option value="16">Medium(16x16)</option>
+                    <option value="20">Large(20x20)</option>
+                    <option value="25">Extra-Large(25x25)</option>
+                    <option value="custum">Custom</option>
+                </select>
+            </div>
+            <div hidden id="custumSet">
+                <div class="settings-form">
+                    <label for="board-width">Board width:</label>
+                    <input type="number" name="board_width" id="board_width" min="9" max="30" value="10">
+
+                </div>
+                <div class="settings-form">
+                    <label for="board-height">Board height:</label>
+                    <input type="number" name="board_height" id="board_height" min="9" max="30" value="10">
+                </div>
+            </div>
+            <div class="settings-form">
+                <label for="dificulty">Dificulty:</label>
+                    <select name="dificulty" id="dificulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                    </select>
+            </div>
+            <div class="settings-form">
+                <label for="theme">Theme:</label>
+                    <select name="theme" id="theme">
+                    <option value="dark">Dark</option>
+                    <option value="light">Light</option>
+                    <option value="default" selected>Default</option>
+                    </select>
+            </div>
+            <div class="settings-form">
+                <label for="gameMode">Game mode:</label>
+                    <select name="gameMode" id="gameMode" onchange="gameModeTime()">
+                    <option value="normal">Normal</option>
+                    <option value="timetrial">Time trial</option>
+                    </select>
+            </div>
+            <div hidden id="timeLimit">
+                <label for="time">Time per reveal (seconds):</label>
+                <input type="range" min="1" max="10" value="5" id="time" name="time" oninput="mostrarTempo(this.value)"> <span id="timer"></span>
+            </div>
+            <input type="submit" value="Save" class="btn">
+        </form>
+    </div>
+    <script src="js/geral.js"></script>
+    <script src="js/settings.js"></script>
+    </div>
+    <footer>
+        made by Gabriel Cambraia, Tomás Carvalho & Daniel Ferra
+    </footer>
+    </div>
+</body>
+
+</html>

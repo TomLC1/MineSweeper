@@ -1,0 +1,139 @@
+<!-- LTI - ITW - 21/22  -->
+<!-- Grupo 42 TP21 Nº58646 Nº58617 Nº58671 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/home.css">
+
+    <title>Minesweeper</title>
+
+    <script>
+        function buscarCookie(nome) {
+            var value = `; ${document.cookie}`;
+            var partes = value.split(`; ${nome}=`);
+            if (partes.length === 2) return partes.pop().split(';').shift();
+        }
+        var tema = buscarCookie("theme") || 'default';
+        var link = document.createElement('link'); 
+        link.rel = 'stylesheet'; 
+        link.type = 'text/css';
+        link.href = "./css/theme_"+tema+".css"; 
+        document.getElementsByTagName('HEAD')[0].appendChild(link); 
+    </script>
+</head>
+
+<body>
+    <div class="flex-wrapper">
+    <div id="menu"><img src="img/icons8-menu-64.png" alt=""></div>
+    <div class="logo">Minesweeper</div>
+    <nav id="navbar" class="d-xs-none">
+        <ul>
+            <li><a class="link active" href="index.html">Home</a></li>
+            <li><a class="link" href="tutorial.html">Tutorial</a></li>
+            <script>
+                if (localStorage.getItem("loggedUser") != undefined) {
+                    document.querySelector("#navbar ul").innerHTML+=" <li><a class='link' href='singleplayer.html'>Singleplayer</a></li>";
+                }
+            </script>
+            <li><a class="link" href="multiplayer.html">Multiplayer</a></li>
+            <li><a class="link" href="settings.html">Settings</a></li>
+            <li><a class="link" href="info.html">Info</a></li>
+        </ul>
+    </nav>
+    <h1 id="h1">home</h1>
+    
+    <div class="main2">
+        <p class="f-larger text-center mb-2" id="ready"><strong>Welcome to Minesweeper</strong>, register to play! <br> If you already have an account please Login!</p>
+        <button class="btn bg-2" id="btnJogar" onclick="window.location='singleplayer.html'" hidden >Play!</button>
+        <div class="d-flex d-xs-block" id="forms">
+        <div class="login" id="divLogin">
+            <h2>Login</h2>
+            <p style="color: red">Login to unlock singleplayer gamemode</p>
+            <form action="javascript:login()" name="login">
+                <input class="form-control" type="text" id="l_nome" name="l_nome" placeholder="Enter your name">
+                <input class="form-control" type="password" id="l_pass" name="l_pass" placeholder="Enter your password">
+                <span class="aviso" id="avisoL"></span>
+                <input type="submit" value="Log me in" class="btn">
+            </form>
+            <p style="color: rgb(29, 49, 49);">Don't have an account?</p>
+            <button class="btn" id="btnRegister">Register</button>
+        </div>
+        <div class="login" style="display: none;" id="divRegister">
+            <h2>Register</h2>
+            <form action="javascript:register()" name="registo">
+                <input class="form-control" type="text" id="r_nome" name="r_nome" placeholder="Enter your name">
+                <input class="form-control" type="password" id="r_pass" name="r_pass" placeholder="Enter your password">
+                <input class="form-control" type="password" id="r_cpass" name="r_cpass" placeholder="Confirm password">
+                <span class="aviso" id="avisoR"></span>
+                <span class="aviso" id="avisoG"></span>
+                <input type="submit" value="Register" class="btn">
+            </form>
+            <p style="color: rgb(29, 49, 49);">Already have an account?</p>
+            <button class="btn" id="btnLogin">Login</button>
+        </div>
+    </div>
+    <div class="scores" hidden id="scores">
+        <h3>TOP SCORES</h3>
+        <hr>
+        <div class="d-flex justify-md-between">
+        <div class="p-2">
+            <table>
+                <tbody id="scoreTabhard">
+                    <strong>HARD</strong>
+                    <hr>
+                    <tr>
+                        <th>Name</th>
+                        <th>Time</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="p-2">
+            <table>
+                <tbody id="scoreTabmedium">
+                    <strong>MEDIUM</strong>
+                    <hr>
+                    <tr>
+                        <th>Name</th>
+                        <th>Time</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="p-2">
+            <table>
+                <tbody id="scoreTabeasy">
+                    <strong>EASY</strong>
+                    <hr>
+                    <tr>
+                        <th>Name</th>
+                        <th>Time</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div>
+        <p>Total time played (hours) - <span id="tempoDeJogo"></span></p>
+        <p>Total games played - <span id="totalJogos"></span></p>
+    </div>
+    </div>
+        <br>
+        <button class="btn bg-2" id="btnLogOut" hidden >Log out</button>
+    </div>
+
+    <footer>
+        made by Gabriel Cambraia, Tomás Carvalho & Daniel Ferra
+    </footer>
+    <script src="js/geral.js"></script>
+    <script src="js/home.js"></script>
+    </div>
+</body>
+
+
+</html>

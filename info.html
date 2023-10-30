@@ -1,0 +1,65 @@
+<!-- LTI - ITW - 21/22  -->
+<!-- Grupo 42 TP21 Nº58646 Nº58617 Nº58671 -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/home.css">
+    <title>Minesweeper - Tutorial</title>
+    <script>
+        function buscarCookie(nome) {
+            var value = `; ${document.cookie}`;
+            var partes = value.split(`; ${nome}=`);
+            if (partes.length === 2) return partes.pop().split(';').shift();
+        }
+        var tema = buscarCookie("theme") || 'default';
+
+var link = document.createElement('link'); 
+
+link.rel = 'stylesheet'; 
+
+link.type = 'text/css';
+
+link.href = "./css/theme_"+tema+".css"; 
+
+document.getElementsByTagName('HEAD')[0].appendChild(link); 
+    </script>
+</head>
+<body>
+    <div id="menu"><img src="img/icons8-menu-64.png" alt=""></div>
+    <div class="logo">Minesweeper</div>
+    <nav id="navbar" class="d-xs-none">
+        <ul>
+            <li><a class="link" href="index.html">Home</a></li>
+            <li><a class="link" href="tutorial.html">Tutorial</a></li>
+            <script>
+                if (localStorage.getItem("loggedUser") != undefined) {
+                    document.querySelector("#navbar ul").innerHTML+=" <li><a class='link' href='singleplayer.html'>Singleplayer</a></li>";
+                }
+            </script>
+            <li><a class="link" href="multiplayer.html">Multiplayer</a></li>
+            <li><a class="link" href="settings.html">Settings</a></li>
+            <li><a class="link active" href="info.html">Info</a></li>
+        </ul>
+    </nav>
+
+    <div class="main text-center">
+
+    
+    <h1>Info</h1>
+    <h2>Minesweeper</h2>
+    <p>Minesweeper is a strategy game created in the 60's, which consists of exploring a minefield without detonating any bomb, for this, next to each bomb there are numbers, which represent the number of bombs around that cell, for this task, the player has a limited number of flags to which the mined cells must be assigned.</p>
+    <img src="img/Kmines_Expert_Game_with_Numbers_1-8.png" class="w-100" alt="The first Minesweeper" title="The first Minesweeper">
+    <div class="text-right"><small>The first Minesweeper, made by Jerimac Ratliff's (<a class="link_info" target="_blank" href="https://en.wikipedia.org/wiki/Minesweeper_(video_game)">Wikipédia</a>)</small></div>
+    <br>
+    <p>This game was made by Gabriel Cambraia, Tomás Carvalho & Daniel Ferra, usinge web technologies such as HTML, CSS and Javascript.</p>
+</div>
+<footer>
+    made by Gabriel Cambraia, Tomás Carvalho & Daniel Ferra
+</footer>
+<script src="js/geral.js"></script>
+</body>
+
+</html>

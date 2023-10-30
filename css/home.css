@@ -1,0 +1,489 @@
+/*  LTI - ITW - 21/22
+ Grupo 42 TP21 Nº58646 Nº58617 Nº58671 */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Press+Start+2P&display=swap');
+
+/* Theme Normal */
+
+/* Theme Dark */
+/* :root {
+    --corPrincipal: rgb(30, 30, 30);
+    --CorSecundaria: #adadad;
+    --CorTerciaria:rgb(18, 18, 18);
+    --corQuarta:blanchedalmond;
+} */
+/* Theme Aqua */
+/* :root {
+    --corPrincipal: rgb(66, 192, 192);
+    --CorSecundaria: rgb(25, 42, 42);
+    --CorTerciaria:rgb(53, 149, 149);
+    --corQuarta:blanchedalmond;
+} */
+
+
+.login{
+    background-color: var(--corQuarta);
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.20);
+    margin: 0px 10px;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    max-width: 400px;
+}
+.form-control{
+    display: block;
+    width: 100%;
+    padding: 0.3rem 0.5rem;
+    font-size: 1rem;
+    color: #495057;
+    margin-bottom: 15px;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.login form{display: flex;
+    flex-direction: column;
+align-items: center;}
+nav ul li{display: inline-block;}
+nav li {margin-right: 10px;margin-left: 10px;font-size: large;}
+nav{text-align: center; transition: 500ms;display: flex;
+    justify-content: center;}
+h1{text-align: center; text-transform: uppercase;}
+h2{text-transform: uppercase;}
+.logo{
+    font-family: 'Press Start 2P', cursive;
+    padding: 20px;
+    background-color: var(--corPrincipal);
+    font-size: xx-large;
+    text-align: center;
+}
+.login h2{
+    color: var(--CorTerciaria);
+}
+span.aviso{
+    color: red;
+    font-size: small;
+}
+.scores{
+    background-color:var(--corQuarta);
+    color: darkslategrey;
+    padding: 1.5em;
+    text-align: center;
+    width: fit-content;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.20);
+    border-radius: 20px;
+    margin-top: 20px;
+}
+.scores table{
+    width: 100%;
+}
+.scores h3{
+    font-weight: 800;
+    text-transform: uppercase;
+}
+body{
+    background-color: var(--corPrincipal);
+    font-family: 'Lato', sans-serif;
+    color: var(--CorSecundaria);
+    margin: 0;
+    min-height: 100vh;
+}
+
+.link{
+    text-decoration: none;
+    color: var(--CorSecundaria);
+    transition: 500ms;
+}
+.link_info{
+    text-decoration: none;
+    color: var(--CorSecundaria);
+    transition: 500ms;
+}
+.link_info:hover{
+    color: rgb(97, 150, 248);
+}
+.link.active{
+    color: gray;
+}
+.link:hover{
+    color: gray;
+}
+.btn{
+    background-color: var(--corPrincipal);
+    color: var(--CorSecundaria);
+    border: none;
+    padding: 10px 15px;
+    font-size: large;
+    border-radius: 25px;
+    transition: 500ms;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 140px;
+}
+.btn:hover{
+    color: var(--corPrincipal);
+    background-color: rgb(209, 198, 173);
+    width: 170px;
+    margin-top: 10px;
+}
+.main{
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 0px;
+    padding-bottom: 50px;
+}
+.main2{
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+/* Para deixar o footer sempre em baixo*/ 
+.flex-wrapper {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+footer{
+    padding: 50px;
+    text-align: center;
+    background-color: var(--CorTerciaria);
+    margin-top: 1.5em;
+}
+select{
+    border: none;
+    border-radius: 20px;
+    padding: 2px 5px;
+}
+.settings{
+    background-color: var(--corQuarta);
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.20);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 70px;
+    color: rgb(29, 49, 49);
+    text-transform: capitalize;
+}
+.Minesweeper{
+    display: table;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 15px 0px;
+}
+.Minesweeper.single{
+    margin: auto;
+ }
+.Minesweeper div{
+    display: table-row;
+}
+.Minesweeper .d-none{
+    display: none;
+}
+.Minesweeper .celula{
+    display: table-cell;
+    border: 2px solid rgb(206, 206, 206);
+    background-color: var(--CorTabuleiro);
+    width: 3vw;
+    height: 3vw;
+    border-collapse: collapse;
+    transition: 500ms;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    line-height: 3vw;
+}
+.Minesweeper .celula.flag{
+   background-image: url('../img/flag.png');
+   background-size: cover;
+}
+
+.Minesweeper .celula.duvida{
+    background-image: url('../img/question.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.Minesweeper tr td:hover{
+    background-color: rgb(45, 75, 75);
+}
+#menu{
+    display: none;
+}
+#endGameModal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.40);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+#avisoG{
+    color: green;
+}
+.disable{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+#nomesModal{
+    display: block;
+    position: fixed;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.40);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+#nomesModal #nomeInput{
+    padding: 2.5em;
+    background-color: var(--corQuarta);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 10px;
+    text-align: center;
+    justify-content: center;
+    max-height: 80vh;
+    color: var(--corPrincipal);
+}
+#nomesModal #nomeInput input.in{
+    width: auto;
+}
+#jogador1Nome, #jogador2Nome{
+    text-transform: uppercase;
+    font-size: larger;
+    font-family: 'Press Start 2P', cursive;
+}
+#endGameModal #endGameContent{
+    padding: 2.5em;
+    background-color: var(--corQuarta);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 10px;
+    text-align: center;
+    max-height: 80vh;
+    color: var(--corPrincipal);
+}
+#endGameModal #endGameContent #resultado{
+    text-transform: uppercase;
+    color: var(--corPrincipal);
+    font-weight: 800;
+    /* font-family: 'Press Start 2P',cursive; */
+    font-size: larger;
+}
+#endGameModal #endGameContent button{
+    font-size: 15px;
+}
+.main.settings.d-flex.flex-column.align-items-center.text-center p{
+    display: flex;
+    align-items: center;
+}
+.main.settings.d-flex.flex-column.align-items-center.text-center p img{
+    margin-right: 10px;
+}
+
+/* classes para ajudar */
+/* Alinhamentos de texto */
+.text-center{
+    text-align: center;
+}
+.text-left{
+    text-align: left;
+}
+.text-right{
+    text-align: right;
+}
+
+/* Alinhamento de conteúdo */
+.d-flex{
+    display: flex;
+}
+.d-block{
+    display: block;
+}
+.flex-column{
+    flex-direction: column;
+}
+.align-center{
+    align-content: center;
+}
+.align-items-center{
+    align-items: center;
+}
+.justify-center{
+    justify-content: center;
+}
+.justify-between{
+    justify-content: space-between;
+}
+.settings-form{
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.timerDisplay{
+        /* position: fixed; */
+        display: block;
+        width: fit-content;
+        margin-left: auto;
+        margin-bottom: 10px;
+        margin-right: auto;
+        background: #ffffff;
+        /* top: 5%; */
+        /* right: 5%; */
+        padding: 20px;
+        font-family: 'Roboto mono',monospace;
+        color: #0381bb;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border-radius: 5px;
+        box-shadow: 0 0 20px rgb(119 192 251 / 25%);
+}
+
+#startTimer{
+    position: fixed;
+    top:20%;
+    right: 10%;
+}
+
+/* Cores (bg - fundo, cor -  texto)*/
+.bg-1{
+    background-color: var(--corPrincipal);
+}
+.cor-1{
+    color: var(--corPrincipal);
+}
+.bg-2{
+    background-color: var(--CorTerciaria);
+}
+
+/* tamanhos */
+.w-100{
+    width: 100%;
+}
+/* Tamanhos de letra */
+.f-small{
+    font-size: small;
+}
+.f-medium{
+    font-size: medium;
+}
+.f-large{
+    font-size:large;
+}
+.f-larger{
+    font-size: larger;
+}
+.f-x-large{
+    font-size: x-large;
+}
+.f-xx-large{
+    font-size:xx-large;
+}
+
+/*Paddings e margens*/
+.p-2{
+    padding: 1em;
+}
+.mb-2{
+    margin-bottom: 1.5em;
+}
+
+.justify-md-between{
+    justify-content: space-between;
+}
+
+
+/* Ajustes ao tamanho */
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 767.98px) {
+    .justify-md-between{
+        flex-direction: column;
+    }
+    .Minesweeper .celula{
+        display: table-cell;
+    border: 2px solid rgb(206, 206, 206);
+    background-color: var(--CorTabuleiro);
+    width: 6vw;
+    height: 6vw;
+    border-collapse: collapse;
+    transition: 500ms;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    line-height: 6vw;
+    }
+    .flex-xs-column{
+        flex-direction: column;
+    }
+    .login{
+        margin: 20px 0;
+    }
+    .scores{
+        max-width: 400px;
+        
+    }
+    .d-xs-block{
+        display: block;
+    }
+    .main{
+        width: 70%;
+    }
+    nav ul{
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+    .logo{
+        font-size: large;
+    }
+    .d-xs-none{
+        display: none;
+    }
+    #menu{
+        display: block;
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        transition: 500ms;
+    }
+    #menu img{
+        width: 30px;
+        height: 30px;
+    }
+    .rodar{
+        transform: rotate(90deg);
+    }
+ }
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) { 
+
+ }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {  }
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  }

@@ -1,0 +1,134 @@
+<!-- LTI - ITW - 21/22  -->
+<!-- Grupo 42 TP21 Nº58646 Nº58617 Nº58671 -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/home.css" type="text/css">
+    <title>Minesweeper - Tutorial</title>
+    <script>
+        function buscarCookie(nome) {
+            var value = `; ${document.cookie}`;
+            var partes = value.split(`; ${nome}=`);
+            if (partes.length === 2) return partes.pop().split(';').shift();
+        }
+        
+        var tema = buscarCookie("theme") || 'default';
+
+var link = document.createElement('link'); 
+
+link.rel = 'stylesheet'; 
+
+link.type = 'text/css';
+
+link.href = "./css/theme_"+tema+".css"; 
+
+document.getElementsByTagName('HEAD')[0].appendChild(link); 
+    </script>
+    <script>
+        if (buscarCookie("som")==='true'){
+            var audio = new Audio('audio/musica_8bit1.wav');
+            audio.play();
+            audio.loop=true;
+            audio.volume=buscarCookie("volume")/100;
+        }
+    </script>
+</head>
+
+<body>
+<div class="flex-wrapper">
+    <div>
+    <div id="menu"><img src="img/icons8-menu-64.png" alt=""></div>
+    <div class="logo">Minesweeper</div>
+    <nav id="navbar" class="d-xs-none">
+        <ul>
+            <li><a class="link" href="index.html">Home</a></li>
+            <li><a class="link" href="tutorial.html">Tutorial</a></li>
+            <li><a class="link active" href="singleplayer.html">Singleplayer</a></li>
+            <li><a class="link" href="multiplayer.html">Multiplayer</a></li>
+            <li><a class="link" href="settings.html">Settings</a></li>
+            <li><a class="link" href="info.html">Info</a></li>
+        </ul>
+        
+
+    </nav>
+    <h1>Singleplayer</h1>
+    <div class="timerDisplay" id="timerDisplay">
+        00 : 00 : 000
+    </div>
+    <div class="main"  id="main">
+       
+        
+    </div>
+    <div class="main2">
+        <button class="btn" onclick="reiniciar()">Reiniciar</button>
+    </div>
+    <div id="endGameModal">
+        <div id="endGameContent">
+            <span id="resultado"></span>
+            <p id="frase"></p>
+            <button class="btn" onclick="window.location.reload()">Play again</button>
+            <button class="btn" onclick="window.location.href='index.html'">Main menu</button>
+            <div class="d-flex justify-center">
+                <div class="scores" hidden id="scores">
+                    <h3>TOP SCORES</h3>
+                    <hr>
+                    <div class="d-flex justify-md-between">
+                    <div class="p-2">
+                        <table>
+                            <tbody id="scoreTabhard">
+                                <strong>HARD</strong>
+                                <hr>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Time</th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="p-2">
+                        <table>
+                            <tbody id="scoreTabmedium">
+                                <strong>MEDIUM</strong>
+                                <hr>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Time</th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="p-2">
+                        <table>
+                            <tbody id="scoreTabeasy">
+                                <strong>EASY</strong>
+                                <hr>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Time</th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                </div>
+        </div>
+        </div>
+    </div>
+    </div>
+    
+
+
+    <script src="js/geral.js"></script>
+    <script src="js/jogo.js"></script>
+
+<footer>
+    made by Gabriel Cambraia, Tomás Carvalho & Daniel Ferra
+</footer>
+</div>
+
+</body>
+
+</html>

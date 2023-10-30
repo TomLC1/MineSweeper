@@ -1,0 +1,69 @@
+<!-- LTI - ITW - 21/22  -->
+<!-- Grupo 42 TP21 Nº58646 Nº58617 Nº58671 -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/home.css">
+    <script>
+        function buscarCookie(nome) {
+            var value = `; ${document.cookie}`;
+            var partes = value.split(`; ${nome}=`);
+            if (partes.length === 2) return partes.pop().split(';').shift();
+        }
+        var tema = buscarCookie("theme") || 'default';
+
+var link = document.createElement('link'); 
+
+link.rel = 'stylesheet'; 
+
+link.type = 'text/css';
+
+link.href = "./css/theme_"+tema+".css"; 
+
+document.getElementsByTagName('HEAD')[0].appendChild(link); 
+    </script>
+    <title>Minesweeper - Tutorial</title>
+</head>
+<body>
+    <div id="menu"><img src="img/icons8-menu-64.png" alt=""></div>
+    <div class="logo">Minesweeper</div>
+    <nav id="navbar" class="d-xs-none">
+        <ul>
+            <li><a class="link" href="index.html">Home</a></li>
+            <li><a class="link active" href="tutorial.html">Tutorial</a></li>
+            <script>
+                if (localStorage.getItem("loggedUser") != undefined) {
+                    document.querySelector("#navbar ul").innerHTML+=" <li><a class='link' href='singleplayer.html'>Singleplayer</a></li>";
+                }
+            </script>
+            <li><a class="link" href="multiplayer.html">Multiplayer</a></li>
+            <li><a class="link" href="settings.html">Settings</a></li>
+            <li><a class="link" href="info.html">Info</a></li>
+        </ul>
+        
+
+    </nav>
+
+    <div class="main text-center">
+    <h1>Tutorial</h1>
+    <p>Here's a quick tutorial to understand the mechanics of Minesweeper.</p>
+    <div class=" d-flex justify-center">
+    <iframe width="600" height="354" src="https://www.youtube.com/embed/7B85WbEiYf4" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="main settings d-flex flex-column align-items-center text-center">
+        <h2>Controls:</h2>
+        <p><img src="img/mouse_left.png" height="40px" alt="The first Minesweeper" title="The first Minesweeper"> Reveal Cell</p>
+        <p><img src="img/mouse_right.png" height="40px" alt="The first Minesweeper" title="The first Minesweeper"> Place Flag</p>
+        <p><img src="img/mouse_middle.png" height="40px" alt="The first Minesweeper" title="The first Minesweeper"> Place '?'</p>
+    </div>
+</div>
+    <footer>
+        made by Gabriel Cambraia, Tomás Carvalho & Daniel Ferra
+    </footer>
+    <script src="js/geral.js"></script>
+</body>
+
+</html>
